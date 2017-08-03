@@ -150,7 +150,7 @@ class AnsibleProgramatic:
 
         return tqm
 
-def yaml2json(stream):
+def Yaml2Json(stream):
     """Receive yaml and convert it into json."""
 
     json_data = yaml.safe_load(stream)
