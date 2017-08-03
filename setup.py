@@ -18,5 +18,6 @@ setup(name='programansible',
       package_dir={'programansible': 'programansible'},
       install_requires=[
           "ansible>=2.3.1.0",
+          "pyyaml>=3.12",
           ],
       )
