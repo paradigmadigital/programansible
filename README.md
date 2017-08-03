@@ -18,5 +18,5 @@ python setup.py install
 Or you can simply use pip:
 
 ```bash
-pip install https://git.paradigmadigital.com/ansible/programansible/repository/archive.tar.gz?ref=v0.1
+pip install git+https://git.paradigmadigital.com/ansible/programansible/
 ```
