@@ -128,6 +128,13 @@ class AnsibleProgramatic:
         # Define callback
         self.callback = callback
 
+    def yaml2json(self, stream):
+        """Receive yaml and convert it into json."""
+
+        json_data = yaml.safe_load(stream)
+
+        return json_data
+
     def run(self):
         """Execute the playbook."""
         # Instancia el objeto del playbook
@@ -149,10 +156,3 @@ class AnsibleProgramatic:
         tqm = tqm._variable_manager._nonpersistent_fact_cache.items()
 
         return tqm
-
-def Yaml2Json(stream):
-    """Receive yaml and convert it into json."""
-
-    json_data = yaml.safe_load(stream)
-
-    return json_data
