@@ -44,7 +44,7 @@ class Options(object):
                  ssh_extra_args=None, poll_interval=None, seconds=None,
                  check=None, syntax=None, diff=None, force_handlers=None,
                  flush_cache=None, listtasks=None, listtags=None,
-                 module_path=None):
+                 module_path=None, ansible_ssh_pass=None):
 
         self.verbosity = verbosity
         self.inventory = inventory
@@ -88,6 +88,7 @@ class Options(object):
         self.listtasks = listtasks
         self.listtags = listtags
         self.module_path = module_path
+        self.ansible_ssh_pass = ansible_ssh_pass
 
 
 class AnsibleProgramatic:
@@ -139,7 +140,7 @@ class AnsibleProgramatic:
                                loader=self.loader,
                                options=self.options,
                                passwords=self.passwords,
-                               stdout_callback=None
+                               stdout_callback=self.callback
                               )
         # Ejecuta el playbook
         tqm.run(play)
