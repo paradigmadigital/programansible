@@ -128,19 +128,13 @@ class AnsibleProgramatic:
         # Define callback
         self.callback = callback
 
-    def yaml2json(self, stream):
-        """Receive yaml and convert it into json."""
-
-        json_data = yaml.safe_load(stream)
-
-        return json_data
-
     def run(self):
         """Execute the playbook."""
         # Instancia el objeto del playbook
         play = Play().load(self.playbook,
                            variable_manager=self.variable_manager,
                            loader=self.loader)
+
         # Añade el playbook a la cola
         tqm = TaskQueueManager(inventory=self.inventory,
                                variable_manager=self.variable_manager,
@@ -156,3 +150,10 @@ class AnsibleProgramatic:
         tqm = tqm._variable_manager._nonpersistent_fact_cache.items()
 
         return tqm
+
+def yaml2json(stream):
+    """Receive yaml and convert it into json."""
+
+    json_data = yaml.safe_load(stream)
+
+    return json_data
