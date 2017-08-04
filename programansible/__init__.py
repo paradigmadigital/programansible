@@ -32,10 +32,10 @@ class Options(object):
     Options class to replace Ansible OptParser
     """
     def __init__(self, verbosity=None, inventory=None, listhosts=None,
-                 subset=None, module_paths=None, extra_vars=None, forks=None,
+                 subset=None, module_paths=None, extra_vars=None, forks=10,
                  ask_vault_pass=None, vault_password_files=None,
-                 new_vault_password_file=None, output_file=None, tags=None,
-                 skip_tags=None, one_line=None, tree=None, ask_sudo_pass=None,
+                 new_vault_password_file=None, output_file=None, tags=[],
+                 skip_tags=[], one_line=None, tree=None, ask_sudo_pass=None,
                  ask_su_pass=None, sudo=None, sudo_user=None, become=None,
                  become_method=None, become_user=None, become_ask_pass=None,
                  ask_pass=None, private_key_file=None, remote_user=None,
