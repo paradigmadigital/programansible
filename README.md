@@ -10,7 +10,7 @@ The reason of using python instead of a regular ansible playbook is that at the 
 You can clone the repository and install from source (you should always use a virtualenv):
 
 ```bash
-git clone https://git.paradigmadigital.com/ansible/programansible
+git clone https://github.com/paradigmadigital/programansible
 cd programansible
 python setup.py install
 ```
@@ -18,5 +18,5 @@ python setup.py install
 Or you can simply use pip:
 
 ```bash
-pip install git+https://git.paradigmadigital.com/ansible/programansible/
+pip install git+https://github.com/paradigmadigital/programansible/
 ```
